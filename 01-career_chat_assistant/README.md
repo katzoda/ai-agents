@@ -3,7 +3,7 @@
 
 This chat assistant is based on two frontier LLM models:
 
-gpt-4o-mini and gemini-2.0-flash
+gpt-4o-mini and gemini-2.5-flash
 
 GPT-4o model is responsible for the conversation and tools call.
 
@@ -103,7 +103,11 @@ Push: Recording What is your favourite movie genre? asked that I couldn't answer
  {'role': 'user', 'content': 'what is your favourite movie genre?'}, 
 
  ### the LLM model does not have this information so it uses a tool:
- ChatCompletionMessage(content=None, refusal=None, role='assistant', annotations=[], audio=None, function_call=None, 
+ Tool called: record_unknown_question
+ Push: Recording What is your favourite movie genre? asked that I couldn't answer
+ 
+ ChatCompletionMessage(content=None, refusal=None, role='assistant', annotations=[], audio=None, function_call=None,
+
     tool_calls=
         [ChatCompletionMessageToolCall(id='call_NmZjiCIsvR9tpQ55JuBSXfzG', 
         function=Function(arguments='{"question":"What is your favourite movie genre?"}', name='record_unknown_question'), type='function')]
