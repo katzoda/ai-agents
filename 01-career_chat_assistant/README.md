@@ -46,7 +46,7 @@ message=ChatCompletionMessage(content='This is the actual message from an LLM',
                                 tool_calls=None)
 )
 
-# What happens if a tool is called
+## What happens if a tool is called
 
 The chat app contains for example this tool:
 
@@ -79,9 +79,11 @@ ChatCompletionMessage(
 There is an id of the tool and inside arguments attribute there is a text of a question the Agent could not answer.
 
 
-# Example of a conversation between a User and an Assistant
+## Example of a conversation between a User and an Assistant
 It's a sequence o messages:
+
 [{"role": "user", "content": message}]
+
 [{"role": "assistant", "content": message}]
 
 Tool called: record_unknown_question
@@ -89,12 +91,18 @@ Push: Recording What is your favourite movie genre? asked that I couldn't answer
 
 
 [{'role': 'system', 'content': "Example of a system promt: You are acting as 'person name'. You are answering questions on his/her behalf  - see the jupyter notebook for full prompt text"},
- {'role': 'user', 'metadata': None, 'content': 'hi there!', 'options': None}, 
- {'role': 'assistant', 'metadata': None, 'content': 'Hello! How can I assist you today? If you have any questions about my career or experience, feel free to ask!', 'options': None}, 
- {'role': 'user', 'metadata': None, 'content': "what's your current job?", 'options': None}, 
- {'role': 'assistant', 'metadata': None, 'content': "I currently work as a consultant in a networking team at a company XYZ etc ...If you'd like to know more or have any specific questions, feel free to ask!", 'options': None}, 
+
+ {'role': 'user', 'metadata': None, 'content': 'hi there!', 'options': None},
+
+ {'role': 'assistant', 'metadata': None, 'content': 'Hello! How can I assist you today? If you have any questions about my career or experience, feel free to ask!', 'options': None},
+
+ {'role': 'user', 'metadata': None, 'content': "what's your current job?", 'options': None},
+
+ {'role': 'assistant', 'metadata': None, 'content': "I currently work as a consultant in a networking team at a company XYZ etc ...If you'd like to know more or have any specific questions, feel free to ask!", 'options': None},
+
  {'role': 'user', 'content': 'what is your favourite movie genre?'}, 
- # the LLM model does not have this information so it uses a tool:
+
+ ### the LLM model does not have this information so it uses a tool:
  ChatCompletionMessage(content=None, refusal=None, role='assistant', annotations=[], audio=None, function_call=None, 
     tool_calls=
         [ChatCompletionMessageToolCall(id='call_NmZjiCIsvR9tpQ55JuBSXfzG', 

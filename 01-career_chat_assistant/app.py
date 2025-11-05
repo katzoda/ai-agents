@@ -4,7 +4,17 @@ import json
 import os
 import requests
 from pypdf import PdfReader
+from pydantic import BaseModel
 import gradio as gr
+
+# we define an object: class Evaluation(BaseModel)
+# it uses a technique called Structured outputs which is a way that I can require an LLM to response in a form of an object like this
+# it's going to respond with JSON and the client library is going to take that JSON and use it to populate the object
+class Evaluation(BaseModel):
+    is_acceptable: bool
+    feedback: str
+
+# The Evaluator workflow not yet built-in here (for that see the jupyter notebook lab)
 
 
 load_dotenv(override=True)
